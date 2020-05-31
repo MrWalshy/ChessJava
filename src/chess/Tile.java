@@ -89,7 +89,8 @@ public class Tile {
 			return this.occupyingPiece;
 		}
 		else {
-			return null;
+			this.occupyingPiece = null;
+			return this.occupyingPiece;
 		}
 	}
 }

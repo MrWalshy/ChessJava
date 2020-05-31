@@ -1,0 +1,192 @@
+What is chess?
+	- Chess is a two player strategy board game.
+	- Chess is played on a chequered board.
+	- The board is 64 squares in an 8x8 grid.
+	- Each player begins with 16 pieces.
+	- Chess board is arranged by 'Ranks' and 'Files'.
+		- A 'rank' is a row labelled from '1' to '8'.
+		- A 'file' is a column labelled from 'A' to 'H'.
+
+What are the pieces?
+	- Each player has 1 King.
+	- Each player has 1 Queen.
+	- Each player has 2 Bishops.
+	- Each player has 2 Knights.
+	- Each player has 2 Rooks.
+	- Each player has 8 Pawns.
+	
+How does each piece move?
+	- A King can: 
+		- Travel 1 square in any direction.
+		- Special move: Castling (Involves the Rook).
+		
+	- The Queen can:
+		- Move any number of squares on a file, rank or
+		  diagonally.
+		- NOT leap over other pieces.
+		
+	- The Bishop can:
+		- Only move diagonally, any number of squares.
+		- NOT leap over other pieces.
+		
+	- The Knight can:
+		- A Knight can move to only the closest squares that
+		  are not on the same rank, file or diagonal (L-Shape).
+			- i.e. two squares vertically and one horizontally
+			  or two squares horizontally and one vertically.
+		- Leap over other pieces.
+	
+	- A Rook can:
+		- Move any number of squares on a file or rank.
+		- Can NOT move diagonally.
+		- Can NOT leap over other pieces.
+		- Special move: Castling (Involves the King).
+		
+	- A Pawn can:
+		- Move forward only 1 square at a time unless it is
+		  its first move, then it can move 2 squares.
+		- A Pawn can also capture an opponent's piece on a
+		  square directly diagonal, in front of the Pawn.
+		- Two special moves:
+			- En Passant capture.
+			- Promotion.
+			
+Special Moves?
+	- Castling
+		- Once per game, a King and Rook can make this 
+		  special move.
+		- King moves two squares along rank 1 towards a Rook,
+		  the Rook is placed on the square the King has just
+		  passed.
+		- Requires the following conditions to be met:
+			- Neither the King nor Rook has moved in the game.
+			- No pieces between the King and the Rook.
+			- King can NOT be in check.
+			- King can NOT pass through any square under attack.
+			- King can NOT move to a square that would result
+			  in check.
+			- Castling is permitted if the Rook is under attack
+			  or crossing an attacked square.
+			  
+	- En Passant
+		- Involves the Pawn.
+		- Can only occur if a Pawn makes its first move
+		  of 2 squares from its starting square, and if it
+		  could have been captured by an enemy Pawn if it
+		  advanced only one square.
+		- COME BACK TO THIS ONE LATER!
+		
+	- Promotion
+		- If a Pawn reaches the 8th rank from its side, it is
+		  promoted and must be exchanged for either one of the
+		  following:
+		  	- Queen
+		  	- Rook
+		  	- Bishop
+		  	- Knight
+		- Underpromotion occurs if the Pawn is not promoted to
+		  a queen.
+		  
+What is Check?
+	- A players King is in Check if it is under attack from
+	  one or two of the opponent's pieces.
+	- The player in Check can only make a legal move that
+	  results in the players King no longer being in check.
+	- Ways of getting out of check include:
+		- Capturing the attacking piece.
+		- Interposing a piece only if the attacking piece is
+		  a Queen, Rook or Bishop with at least 1 square
+		  between the King and the attacking piece.
+		- Moving the King to a square where it is not in check.
+
+Win conditions:
+	- Checkmate: Player whose turn it is has no legal moves
+				 left.
+	- Resignation: Either player may resign, conceding the
+				   victory.
+	- Forfeit: Cheats, conduct violators and rule violators
+			   can be forfeited.
+
+What are the rules?
+	- Rules are published by FIDE (Federation Internationale
+	  des Echechs).
+	- Chess is divided into white and black sets.
+	- Each set consists of the 16 pieces aforementioned.
+	- Played on Ranks and Files as aforementioned.
+	- Illegal to skip a turn.
+	- Can not make a move that would leave the player's own
+	  King in check.
+	- If a player has no legal move, the game is over.
+		- Checkmate is the loss state for a player with no
+		  legal move left if the King is in check.
+		- Stalemate is a draw if the King is not in check.
+	- Read this document and sources.
+
+What sources have I used?
+	- https://en.wikipedia.org/wiki/Chess
+	- https://upload.wikimedia.org/wikipedia/commons/5/55/ChessCastlingMovie_en.svg
+	
+	
+##############################
+		   OVERVIEW
+##############################
+Update as needed...#
+#################################################
+IN ALL CLASSES, OVERRIDE toString() and equals()#
+#################################################
+
+What objects do I need? (Capitalised words are classes)
+	- Chessboard.
+	- Tile for tiles on Chessboard.
+	- Piece.
+	- Queen extending Piece, King extending Piece, etc...
+	- App to run the code.
+
+What is in the Chessboard class?
+	- Instance variables:
+		- Tile 2d Array that can store 64 tiles in an 8x8 grid.
+		- Boolean blacksTurn, true is blacks turn and false is whites turn
+		
+	- Constructor to populate the Tile Array.
+	
+	- Private Instance methods:
+		- createPieces() - Return the chess pieces
+		- createTiles() - Return the board tiles with chess pieces on
+		- populateGrid() - Return an array of boardTiles
+		- whoGoesFirst() - Return the player that goes first(true/false)
+		- getPlayersMove() - Return the players move
+		- checkIfMoveIsLegal() - Return true if the move is legal, else false
+		- checkForCheckmate() - Return true if win condition is met, else false
+		- checkForDraw() - Return true if draw condition is met, else false
+		
+What is in the Tile class?
+	- Instance variables:
+		- tileColour as a string, probably a good idea to look at enums for constants
+		- boolean isOccupied, true if the tile is occupied by a piece
+		- coordinates int array for the x,y (field, rank) position of the tile
+		- Piece object stored as 'piece' if a piece is occupying the tile, else null
+		
+	- Constructor to populate the instance variables
+	
+	- Public instance methods:
+		- setColour() - Set the tileColour
+		- setIsOccupied() - Set the value of isOccupied
+		- setPiece() - Set the object referenced by setPiece()
+		- getCoords() - Get the coords int array of the current tile
+		- getIsOccupied() - Get boolean value of isOccupied
+		- getOccupyingPiece() - Get occupying Piece instance if isOccupied is true
+		- removeOccupyingPiece() - Removes the occupying piece reference
+		
+What is in the Piece class?
+	- Instance variables:
+		- String name, again think about enums(I think they hold constants)
+		- String colour, ditto^
+		
+	- Constructor for instance variables
+	
+	- setName()
+	- setColour()
+	- getName()
+	- getColour()
+	
+	
