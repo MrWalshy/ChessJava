@@ -2,7 +2,12 @@ package chess;
 
 import java.util.Arrays;
 
+import chess.pieces.Bishop;
+import chess.pieces.King;
+import chess.pieces.Knight;
 import chess.pieces.Pawn;
+import chess.pieces.Queen;
+import chess.pieces.Rook;
 
 public class Chessboard {
 	private Tile[][] board;
@@ -47,6 +52,15 @@ public class Chessboard {
 		for (int i = 0; i < 8; i++) {
 			pieces[i] = new Pawn("Pawn", colour);
 		}
+		
+		pieces[8] = new Rook("Rook", colour);
+		pieces[9] = new Knight("Knight", colour);
+		pieces[10] = new Bishop("Bishop", colour);
+		pieces[11] = new Queen("Queen", colour);
+		pieces[12] = new King("King", colour);
+		pieces[13] = new Bishop("Bishop", colour);
+		pieces[14] = new Knight("Knight", colour);
+		pieces[15] = new Rook("Rook", colour);
 		
 		return pieces;
 	}
