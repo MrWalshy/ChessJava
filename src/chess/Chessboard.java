@@ -4,11 +4,13 @@ import java.util.Arrays;
 
 public class Chessboard {
 	private Tile[][] board;
-	private Piece[] pieces;
+	private Piece[] whitePieces;
+	private Piece[] blackPieces;
 	private Boolean blacksTurn;
 	
 	public Chessboard() {
-		pieces = createPieces("WHITE");
+		whitePieces = createPieces("WHITE");
+		blackPieces = createPieces("BLACK");
 	}
 	
 	@Override
@@ -34,6 +36,14 @@ public class Chessboard {
 	}
 	
 	public String getPieces() {
-		return Arrays.toString(this.pieces);
+		StringBuilder builder = new StringBuilder();
+		builder.append("White: ");
+		builder.append(Arrays.toString(this.whitePieces));
+		builder.append("\n");
+		builder.append("Black: ");
+		builder.append(Arrays.deepToString(this.blackPieces));
+		
+		String piecesString = builder.toString();
+		return piecesString;
 	}
 }
