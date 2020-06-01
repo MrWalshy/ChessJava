@@ -19,6 +19,14 @@ public class Chessboard {
 		whitePieces = createPieces("WHITE");
 		blackPieces = createPieces("BLACK");
 		board = createBoard(whitePieces, blackPieces);
+		whoGoesFirst();
+		
+		if (blacksTurn) {
+			System.out.println("Black goes first");
+		}
+		else {
+			System.out.println("White goes first");
+		}
 	}
 	
 	/**
@@ -76,6 +84,7 @@ public class Chessboard {
 		Tile[][] tileStore = new Tile[8][8]; // creates 8 rows and columns to store tile instances
 		int coordBuffer[] = new int[2];
 		
+		// 2d array iterator + tile generator
 		for (int x = 0; x < 8; x++) {
 			for (int y = 0; y < 8; y++) {
 				coordBuffer[0] = x;
@@ -104,5 +113,18 @@ public class Chessboard {
 		
 		String piecesString = builder.toString();
 		return piecesString;
+	}
+	
+	public Boolean whoGoesFirst() {
+		// Get random num in range 0 to 1
+		double randNum = Math.random();
+		// If num is above 0.5, it is blacks first else white first
+		if (randNum > 0.5) {
+			this.blacksTurn = true;
+		}
+		else {
+			this.blacksTurn = false;
+		}
+		return this.blacksTurn;
 	}
 }
