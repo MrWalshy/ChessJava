@@ -2,6 +2,8 @@ package chess;
 
 import java.util.Arrays;
 
+import chess.pieces.Pawn;
+
 public class Chessboard {
 	private Tile[][] board;
 	private Piece[] whitePieces;
@@ -43,7 +45,7 @@ public class Chessboard {
 		
 		// Create 8 pawns and append to pieces
 		for (int i = 0; i < 8; i++) {
-			pieces[i] = new Piece("Pawn", colour);
+			pieces[i] = new Pawn("Pawn", colour);
 		}
 		
 		return pieces;
