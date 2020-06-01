@@ -31,8 +31,8 @@ public class Tile {
 	 * @param coordinates int[]
 	 * @param piece Piece
 	 */
-	public Tile(String colour, boolean isOccupied, int[] coordinates, Piece piece) {
-		this.colour = colour;
+	public Tile(boolean isOccupied, int[] coordinates, Piece piece) {
+		this.colour = null;
 		this.isOccupied = isOccupied;
 		this.coordinates = coordinates;
 		this.occupyingPiece = piece;
