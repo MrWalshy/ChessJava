@@ -4,12 +4,13 @@
 package chess;
 
 /**
- * @author morga
+ * @author morgan
  *
  */
-public class Piece {
-	private String name;
-	private String colour; // white or black
+// Abstract classes can not be instantiated
+public abstract class Piece {
+	public String name;
+	public String colour; // white or black
 	
 	/**
 	 * Constructor for Piece class
